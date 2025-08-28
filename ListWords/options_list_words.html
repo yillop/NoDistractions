@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blocker - Words</title>
+    <link rel="stylesheet" href="../CSS/options_list_words.css" />
+    <link rel="stylesheet" href="../CSS/generic.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="../Components/BlockContainer.js" defer></script>
+    <script src="../Components/SettingsNotif.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Word Blocker</h1>
+    </header>
+    <a href="../ListSites/options_list_sites.html">View Blocked Sites</a>
+    <settings-notif></settings-notif>
+
+    <a
+      href="../SettingsPage/settings.html"
+      id="settings_button"
+      title="Settings"
+    >
+      <i class="fa-solid fa-gear"></i>
+    </a>
+
+    <section id="controls">
+      <div class="upload-section">
+        <div id="word_upload">
+          <input id="word_input" placeholder="Enter word to block..." />
+          <input type="file" class="file_input" accept=".json" hidden />
+          <button id="choose_file" class="hidden">No File Chosen</button>
+          <button class="add_button" data-multiple="false">Add Word</button>
+        </div>
+
+        <label>
+          <input type="checkbox" id="change_amount_to_upload" />
+          Upload Multiple?
+        </label>
+        <a href="../ValidListCreators/ValidWordBlock.html"
+          >Create Valid Block List</a
+        >
+      </div>
+
+      <div>
+        <label>
+          Whitelist Words:
+          <input
+            class="whitelist_input_tb"
+            placeholder="Enter word to whitelist..."
+          />
+        </label>
+        <button id="add_whitelist_btn_tb">Add to Whitelist</button>
+        <div id="whitelist_display_tb"></div>
+      </div>
+
+      <div class="upload_settings_section">
+        <h2>Upload Settings</h2>
+
+        <div class="checkboxes">
+          <label
+            ><input
+              type="checkbox"
+              id="block_search_cb_toolbar"
+              checked="true"
+            />
+            Block in Search</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              id="block_result_cb_toolbar"
+              checked="true"
+            />
+            Block in Results</label
+          >
+        </div>
+      </div>
+
+      <div>
+        <button id="clear_button_b" class="danger">Clear All</button>
+        <button id="download">Download Words</button>
+      </div>
+    </section>
+
+    <block-container num-to-show="50"></block-container>
+
+    <section id="info_section" class="hidden">
+      <h2 id="info_title"></h2>
+      <div class="checkboxes">
+        <label
+          ><input type="checkbox" id="block_search_cb" /> Block in Search</label
+        >
+        <label
+          ><input type="checkbox" id="block_result_cb" /> Block in
+          Results</label
+        >
+      </div>
+
+      <div class="whitelist">
+        <strong>Personal Whitelist:</strong>
+        <ul id="whitelist_display"></ul>
+        <div class="whitelist-add">
+          <input
+            type="text"
+            id="new_whitelist_input"
+            placeholder="Add new whitelist term"
+          />
+          <button id="add_whitelist_btn">Add</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="remove_btn" class="danger">Remove Word</button>
+      </div>
+    </section>
+
+    <script type="module" src="options_list_words.js"></script>
+  </body>
+</html>

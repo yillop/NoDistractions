@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, white, #e0e0e0);
+  margin: 20px;
+  color: #222;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  text-align: center;
+  align-items: center;
+}
+
+
+
+#settings_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.upload-section {
+  min-width: 250px;
+  min-height: 50px;
+  margin-right: 20px;
+}
+
+.add_button{
+  width: 87px;
+}
+
+#choose_file {
+  width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  background: #bed1e5;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #a7c0da;
+}
+
+button.danger {
+  background: #f28b82;
+  border-color: #c62828;
+}
+
+button.danger:hover {
+  background: #e57373;
+}
+
+.hidden {
+  display: none !important;
+}
+
+label {
+  user-select: none;
+}
+
+a {
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0c47a1;
+}
+

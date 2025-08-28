@@ -1,0 +1,86 @@
+.back-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #0066cc;
+}
+
+#controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#blocked_container {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#blocked_words {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#blocked_words button {
+  background: #f1f1f1;
+}
+
+#info_section {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkboxes {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.whitelist {
+  margin: 15px 0;
+}
+
+.whitelist-add {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+ul#whitelist_display {
+  list-style: none;
+  padding: 0;
+}
+
+ul#whitelist_display li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f8f8;
+  padding: 4px 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+ul#whitelist_display li button {
+  background: #f28b82;
+  border: none;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}

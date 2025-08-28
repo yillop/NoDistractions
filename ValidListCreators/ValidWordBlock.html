@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain JSON Builder</title>
+    <link rel="stylesheet" href="../CSS/generic.css" />
+  </head>
+  <body>
+    <a href="../ListWords/options_list_words.html">View Blocked Words</a>
+    <br />
+    <input type="file" class="file_input" accept=".txt" hidden />
+    <button id="choose_file">No File Chosen</button>
+    <button id="uploadButton">Upload</button>
+
+    <div>
+      <h2>Upload Settings</h2>
+      <div>
+        <label>
+          Whitelist Words:
+          <input
+            class="whitelist_input"
+            placeholder="Enter word to whitelist..."
+          />
+        </label>
+        <button id="add_whitelist_btn">Add to Whitelist</button>
+        <div id="whitelist_display"></div>
+      </div>
+
+      <div class="checkboxes">
+        <label>
+          <input type="checkbox" id="block_search_cb_toolbar" checked />
+          Block in Search
+        </label>
+        <label>
+          <input type="checkbox" id="block_result_cb_toolbar" checked />
+          Block in Results
+        </label>
+      </div>
+    </div>
+
+    <script type="module" src="ValidWordBlock.js"></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blocker</title>
+    <link rel="stylesheet" href="../CSS/options_list_sites.css" />
+    <link rel="stylesheet" href="../CSS/generic.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="../Components/BlockContainer.js" defer></script>
+    <script src="../Components/SettingsNotif.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Site Blocker</h1>
+    </header>
+    <a href="../ListWords/options_list_words.html">View Blocked Words</a>
+    <settings-notif></settings-notif>
+
+    <a
+      href="../SettingsPage/settings.html"
+      id="settings_button"
+      title="Settings"
+    >
+      <i class="fa-solid fa-gear"></i>
+    </a>
+
+    <section id="controls">
+      <div class="upload-section">
+        <div id="site_upload">
+          <input
+            class="site_input"
+            placeholder="Enter site to block..."
+            list="dropdown"
+          />
+          <datalist id="dropdown"></datalist>
+          <input type="file" class="file_input" accept=".json" hidden />
+          <button id="choose_file" class="hidden">No File Chosen</button>
+          <button class="add_button" data-multiple="false">Add Site</button>
+        </div>
+        <label>
+          <input type="checkbox" id="change_amount_to_upload" />
+          Upload Multiple?
+        </label>
+        <a href="../ValidListCreators/ValidSiteBlock.html">Create Valid Block List</a>
+      </div>
+
+      <div class="upload_settings_section">
+        <h2>Upload Settings</h2>
+        <div>
+          <label>
+            Redirect Page:
+            <input
+              class="redirect_input"
+              placeholder="Enter site to redirect to..."
+              value="Default"
+            />
+          </label>
+        </div>
+
+        <div class="checkboxes">
+          <label
+            ><input
+              type="checkbox"
+              id="block_search_cb_toolbar"
+              checked="true"
+            />
+            Block in Search</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              id="block_result_cb_toolbar"
+              checked="true"
+            />
+            Block in Results</label
+          >
+        </div>
+      </div>
+
+      <div>
+        <button id="clear_button" class="danger">Clear All</button>
+        <button id="download">Download Sites</button>
+      </div>
+    </section>
+
+    <div id="below_toolbar">
+      <block-container num-to-show="30"></block-container>
+
+      <section id="info_section" class="hidden">
+        <button id="exitInfo" class="close-btn">✕</button>
+
+        <h3 id="info_title"></h3>
+        <div class="redirect-section">
+          <strong>Redirect:</strong>
+          <ul id="redirect_display"></ul>
+          <input
+            type="text"
+            id="new_redirect_input"
+            placeholder="Add new redirect site"
+          />
+          <button id="add_redirect_btn">Add</button>
+          <button id="default_btn">Back To Default</button>
+        </div>
+        <div class="checkboxes">
+          <label
+            ><input type="checkbox" id="block_search_cb_info" /> Block in
+            Search</label
+          >
+          <label
+            ><input type="checkbox" id="block_result_cb_info" /> Block in
+            Results</label
+          >
+          <br />
+          <br />
+        </div>
+        <button id="remove_btn" class="danger">Remove Site</button>
+      </section>
+    </div>
+    <script type="module" src="options_list_sites.js"></script>
+  </body>
+</html>

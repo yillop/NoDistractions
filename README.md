@@ -1,11 +1,12 @@
-NoDistraction - Google Search Distraction Blocker
+NoDistractions - Google Search Distraction Blocker
 
 ## Features and Use
-This extension allowes for you to block yourself from searching for certain sites or topics. It does this in two ways:
 
-1. It allows you to redirect away from a search if it contains a blocked domain or contains a blocked word
+This extension allows for you to block yourself from searching for certain sites or topics. It does this in two ways:
 
-2. On the Google Search Results Page, any result that features either a blocked word or domain will be removed.
+1. It allows you to redirect away from a search if it contains a blocked domain or a blocked word
+
+2. On the Google Search Results page, any result that features either a blocked word or domain will be removed.
 
 Word and site blocking are seperate, allowing for customization of what appears in your searches.
 
@@ -33,7 +34,7 @@ When searching for Michael Jackson after setting "Block Results":
 ![Alt text](READMEIMGS/MJAfter.png)
 
 When searching for Michael Jackson after setting "Block Search":
-![Demo GIF](READMEIMGS/michaeljackson search block.gif)
+![Demo GIF](READMEIMGS/michaeljackson%20search%20block.gif)
 
 The same thing as above will happen for site domains that you block.
 
@@ -53,4 +54,5 @@ This extensions requests the following permissions:
 These permissions are required for the extension to block sites and words and manage your block lists
 
 ## License
+
 This project is licensed under the MIT License.

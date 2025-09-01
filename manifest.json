@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Site Blocker Redux",
+  "name": "Google Chrome Search Distraction Blocker",
   "version": "1.0",
-  "description": "A Chrome extension to block sites from appearing in search results and block site links from being accessed",
+  "description": "A Chrome extension to block sites or words from appearing in search results and block site links from being accessed",
   "background": {
     "service_worker": "background.js",
     "type": "module"
@@ -16,6 +16,18 @@
     "storage"
   ],
   "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": ["block.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "Icons/icon16.png",
+    "32": "Icons/icon32.png",
+    "48": "Icons/icon48.png",
+    "128": "Icons/icon128.png"
+  },
   "content_scripts": [
     {
       "matches": ["*://*.google.com/search*"],

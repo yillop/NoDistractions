@@ -11,6 +11,7 @@
     />
     <script src="../Components/BlockContainer.js" defer></script>
     <script src="../Components/SettingsNotif.js" defer></script>
+    <script src="../Components/Tooltip.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,6 +24,7 @@
       href="../SettingsPage/settings.html"
       id="settings_button"
       title="Settings"
+      aria-label="Open settings"
     >
       <i class="fa-solid fa-gear"></i>
     </a>
@@ -34,17 +36,58 @@
             class="site_input"
             placeholder="Enter site to block..."
             list="dropdown"
+            aria-label="Site to block"
           />
           <datalist id="dropdown"></datalist>
-          <input type="file" class="file_input" accept=".json" hidden />
-          <button id="choose_file" class="hidden">No File Chosen</button>
-          <button class="add_button" data-multiple="false">Add Site</button>
+          <input
+            type="file"
+            class="file_input"
+            accept=".json"
+            aria-label="File input"
+            hidden
+          />
+          <button id="choose_file" class="hidden" aria-label="Choose file">
+            No File Chosen
+          </button>
+          <button
+            class="add_button"
+            data-multiple="false"
+            aria-label="Add site"
+          >
+            Add Site
+          </button>
+          <info-tooltip
+            title="Only input the domain of the site and optionally a path. Eg. example.com/path"
+          ></info-tooltip>
         </div>
         <label>
-          <input type="checkbox" id="change_amount_to_upload" />
+          <input
+            type="checkbox"
+            id="change_amount_to_upload"
+            aria-label="Upload multiple sites?"
+          />
           Upload Multiple?
         </label>
-        <a href="../ValidListCreators/ValidSiteBlock.html">Create Valid Block List</a>
+        <a
+          href="../ValidListCreators/ValidSiteBlock.html"
+          aria-label="Create Valid Block List"
+          >Create Valid Block List</a
+        >
+        <info-tooltip title="Limit of 5000 sites"></info-tooltip>
+
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            id="use_upload_settings"
+            aria-label="Use Upload Settings?"
+            class="hidden"
+          />
+          Use Upload Settings?
+          <info-tooltip
+            title="This will overide the settings of the sites in the file with the settings defined in the upload settings section"
+          ></info-tooltip>
+        </label>
       </div>
 
       <div class="upload_settings_section">
@@ -56,6 +99,7 @@
               class="redirect_input"
               placeholder="Enter site to redirect to..."
               value="Default"
+              aria-label="Set redirect page"
             />
           </label>
         </div>
@@ -66,6 +110,7 @@
               type="checkbox"
               id="block_search_cb_toolbar"
               checked="true"
+              aria-label="Set Block in Search"
             />
             Block in Search</label
           >
@@ -74,6 +119,7 @@
               type="checkbox"
               id="block_result_cb_toolbar"
               checked="true"
+              aria-label="Set Block in Results"
             />
             Block in Results</label
           >
@@ -81,8 +127,16 @@
       </div>
 
       <div>
-        <button id="clear_button" class="danger">Clear All</button>
-        <button id="download">Download Sites</button>
+        <button
+          id="clear_button"
+          class="danger"
+          aria-label="Clear all blocked sites"
+        >
+          Clear All
+        </button>
+        <button id="download" aria-label="Download blocked sites">
+          Download Sites
+        </button>
       </div>
     </section>
 
@@ -90,7 +144,9 @@
       <block-container num-to-show="30"></block-container>
 
       <section id="info_section" class="hidden">
-        <button id="exitInfo" class="close-btn">✕</button>
+        <button id="exitInfo" aria-label="Close info" class="close-btn">
+          ✕
+        </button>
 
         <h3 id="info_title"></h3>
         <div class="redirect-section">
@@ -100,23 +156,38 @@
             type="text"
             id="new_redirect_input"
             placeholder="Add new redirect site"
+            aria-label="Add new redirect site"
           />
-          <button id="add_redirect_btn">Add</button>
-          <button id="default_btn">Back To Default</button>
+          <button id="add_redirect_btn" aria-label="Add redirect site">
+            Add
+          </button>
+          <button id="default_btn" aria-label="Back to default">
+            Back To Default
+          </button>
         </div>
         <div class="checkboxes">
           <label
-            ><input type="checkbox" id="block_search_cb_info" /> Block in
-            Search</label
+            ><input
+              type="checkbox"
+              id="block_search_cb_info"
+              aria-label="Block in Search"
+            />
+            Block in Search</label
           >
           <label
-            ><input type="checkbox" id="block_result_cb_info" /> Block in
-            Results</label
+            ><input
+              type="checkbox"
+              id="block_result_cb_info"
+              aria-label="Block in Results"
+            />
+            Block in Results</label
           >
           <br />
           <br />
         </div>
-        <button id="remove_btn" class="danger">Remove Site</button>
+        <button id="remove_btn" class="danger" aria-label="Remove site">
+          Remove Site
+        </button>
       </section>
     </div>
     <script type="module" src="options_list_sites.js"></script>

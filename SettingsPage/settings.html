@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/settings.css" />
     <script src="../Components/ImageTooltip.js" defer></script>
     <script src="../Components/SettingsNotif.js" defer></script>
+    <script src="../Components/Tooltip.js" defer></script>
   </head>
   <body>
     <a href="../ListSites/options_list_sites.html">View Blocked Sites</a>
@@ -25,6 +26,24 @@
           Change Default Redirect
         </button>
         <button id="retToOrigRedirect">Return to Original Block Page</button>
+        <button id="chngToMatch">Change to match words</button>
+
+        <p id="currRedirect_word" class="highlight"></p>
+        <input
+          id="inputNewRedirect_word"
+          placeholder="Enter new redirect for words"
+        />
+        <button
+          id="chngDefaultRedirect_word"
+          title="This will change the site that a search for this word redirects to"
+        >
+          Change Redirect
+        </button>
+        <button id="retToOrigRedirect_word">
+          Return to Original Block Page
+        </button>
+        <button id="chngToMatch_words">Change to match sites</button>
+
         <br />
         <br />
         <label
@@ -67,7 +86,7 @@
           type="checkbox"
           id="block_People_also_ask"
           checked="true"
-          data-selectors='{"roots":[".A6K0A "],"properties":["[class=\"LQCGqc\"]","[jscontroller=\"Da4hkd\"]"]}'
+          data-selectors='{"roots":["div[jscontroller=\"Da4hkd\"]"],"properties":["[class=\"LQCGqc\"]"]}'
         />
         Block "People also ask" section
         <image-tooltip src="../BlockExamples/PeopleAlsoAsk.png"></image-tooltip>
@@ -79,7 +98,7 @@
           type="checkbox"
           id="block_people_also_search"
           checked="true"
-          data-selectors='{"roots":[".ULSxyf "],"properties":["[jscontroller=\"u9YDDf\"]","[class=\"b2Rnsc vIifob\"]"]}'
+          data-selectors='{"roots":[".oIk2Cb "],"properties":["[class=\"M6HR1c PJI6ge adDDi\"]"]}'
         />
         Block "People also search" section
         <image-tooltip
@@ -93,7 +112,7 @@
           type="checkbox"
           id="block_social_media"
           checked="true"
-          data-selectors='{"roots":[".A6K0A",".eejeod.up9jud", ".ULSxyf"],"properties":["[class=\"fy7gGf\"]","[jscontroller=\"s0j7C\"]"]}'
+          data-selectors='{"roots":["g-section-with-header",".eejeod.up9jud"],"properties":["[jscontroller=\"s0j7C\"]"]}'
         />
         Block Social Media section
         <image-tooltip src="../BlockExamples/SocialMedia.png"></image-tooltip>
@@ -105,7 +124,7 @@
           type="checkbox"
           id="block_shorts_tab"
           checked="true"
-          data-selectors='{"roots":[".ULSxyf "],"properties":["g-scrolling-carousel[jscontroller=\"pgCXqb\"]"]}'
+          data-selectors='{"roots":[".Ww4FFb.vt6azd "],"properties":["g-scrolling-carousel[jscontroller=\"pgCXqb\"]"]}'
         />
         Block Short Videos section
         <image-tooltip src="../BlockExamples/ShortVideos.png"></image-tooltip>
@@ -154,6 +173,9 @@
       <input id="whitelist_adder" />
       <button id="add_whitelist_btn">Add</button>
       <button id="clearBtn" class="danger">Clear</button>
+      <info-tooltip
+        title="Double-Click to remove added whitelist terms"
+      ></info-tooltip>
       <div id="whitelisted_words"></div>
     </section>
 

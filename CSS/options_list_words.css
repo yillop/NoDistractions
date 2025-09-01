@@ -84,3 +84,13 @@ ul#whitelist_display li button {
   border-radius: 3px;
   cursor: pointer;
 }
+
+#whitelist_display_tb{
+  max-height: 50px;
+  max-width: 350px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+

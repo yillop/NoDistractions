@@ -102,8 +102,6 @@ button.danger:hover {
     });
   }
 
-  set_block_list(blocked_items = new Map()) {}
-
   fill_container(blocked_items = this.currBlocked, filter = this.currFilter) {
     clearInterval(this.intervalID);
     this.currBlocked = blocked_items;
@@ -157,7 +155,6 @@ button.danger:hover {
 
   loading() {
      let dotCount = 0;
-
     this.intervalID = setInterval(() => {
       dotCount = (dotCount + 1) % 4;
       this.tagline.textContent = "Adding Blocks" + ".".repeat(dotCount);

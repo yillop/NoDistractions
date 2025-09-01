@@ -18,12 +18,12 @@ file_input.addEventListener("change", () => {
     file_input.files.length > 0 ? file_input.files[0].name : "No File Chosen";
 });
 
-uploadButton.addEventListener("click", async function (event) {
+uploadButton.addEventListener("click", function (event) {
   const file = file_input.files[0];
   if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = async function (e) {
+    reader.onload = function (e) {
       const text = e.target.result;
       const domains = text.split(/\r?\n/).filter((line) => line.trim() !== "");
 

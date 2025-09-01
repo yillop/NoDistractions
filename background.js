@@ -27,33 +27,37 @@ chrome.storage.onChanged.addListener((changes, area) => {
 });
 
 async function updateDynamicRulesFromSites(sitesObj) {
-  const rules = await chrome.declarativeNetRequest.getDynamicRules();
-  const ids = rules.map((r) => r.id);
-  if (ids.length > 0) {
-    await chrome.declarativeNetRequest.updateDynamicRules({
-      removeRuleIds: ids,
-    });
-  }
-  const rulesToAdd = Object.entries(sitesObj)
-    .filter(([site, params]) => params.blockSearch)
-    .map(([site, params]) => ({
-      id: params.ruleId,
-      priority: 1,
-      action: {
-        type: "redirect",
-        redirect: {
-          url: normalizeRedirect(params.redirect, defaultRedirect),
+  try {
+    const rules = await chrome.declarativeNetRequest.getDynamicRules();
+    const ids = rules.map((r) => r.id);
+    if (ids.length > 0) {
+      await chrome.declarativeNetRequest.updateDynamicRules({
+        removeRuleIds: ids,
+      });
+    }
+    const rulesToAdd = Object.entries(sitesObj)
+      .filter(([site, params]) => params.blockSearch)
+      .map(([site, params]) => ({
+        id: params.ruleId,
+        priority: 1,
+        action: {
+          type: "redirect",
+          redirect: {
+            url: normalizeRedirect(params.redirect, defaultRedirect),
+          },
         },
-      },
-      condition: {
-        urlFilter: site,
-        resourceTypes: ["main_frame"],
-      },
-    }));
+        condition: {
+          urlFilter: `||${site}^`,
+          resourceTypes: ["main_frame"],
+        },
+      }));
 
-  if (rulesToAdd.length > 0) {
-    await chrome.declarativeNetRequest.updateDynamicRules({
-      addRules: rulesToAdd,
-    });
+    if (rulesToAdd?.length > 0) {
+      await chrome.declarativeNetRequest.updateDynamicRules({
+        addRules: rulesToAdd,
+      });
+    }
+  } catch (e) {
+    console.error("Error updating dynamic rules:", e);
   }
 }

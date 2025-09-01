@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Domain JSON Builder</title>
     <link rel="stylesheet" href="../CSS/generic.css" />
+    <script src="../Components/ImageTooltip.js" defer></script>
   </head>
   <body>
     <a href="../ListWords/options_list_words.html">View Blocked Words</a>
@@ -12,6 +13,10 @@
     <input type="file" class="file_input" accept=".txt" hidden />
     <button id="choose_file">No File Chosen</button>
     <button id="uploadButton">Upload</button>
+    <image-tooltip
+      title="You need to upload a .txt file in the format below. This will  let you download a .json that lets you upload multiple sites at once. The settings below will be the default for uploaded words."
+      src="../BlockExamples/Words_ex.png"
+    ></image-tooltip>
 
     <div>
       <h2>Upload Settings</h2>

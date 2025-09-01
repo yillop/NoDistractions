@@ -82,6 +82,10 @@ label {
   user-select: none;
 }
 
+label:has(input.hidden) {
+  display: none;
+}
+
 a {
   display: inline-block;
   margin: 10px 10px 10px 0;

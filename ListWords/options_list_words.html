@@ -11,6 +11,7 @@
     />
     <script src="../Components/BlockContainer.js" defer></script>
     <script src="../Components/SettingsNotif.js" defer></script>
+    <script src="../Components/Tooltip.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,19 +31,53 @@
     <section id="controls">
       <div class="upload-section">
         <div id="word_upload">
-          <input id="word_input" placeholder="Enter word to block..." />
+          <input
+            id="word_input"
+            aria-label="Word to block"
+            placeholder="Enter word to block..."
+          />
           <input type="file" class="file_input" accept=".json" hidden />
-          <button id="choose_file" class="hidden">No File Chosen</button>
-          <button class="add_button" data-multiple="false">Add Word</button>
+          <button id="choose_file" aria-label="Choose file" class="hidden">
+            No File Chosen
+          </button>
+          <button
+            class="add_button"
+            data-multiple="false"
+            aria-label="Add word"
+          >
+            Add Word
+          </button>
+          <info-tooltip
+            title="Try not to block simple words like 'cat' as that may lead to false positives in words like 'catch' or 'catastrophe'. However, if you do you use simple words you can use the whitelist to allow the false positives."
+          ></info-tooltip>
         </div>
 
         <label>
-          <input type="checkbox" id="change_amount_to_upload" />
+          <input
+            type="checkbox"
+            aria-label="Upload multiple words?"
+            id="change_amount_to_upload"
+          />
           Upload Multiple?
         </label>
-        <a href="../ValidListCreators/ValidWordBlock.html"
+        <a
+          aria-label="Create Valid Block List"
+          href="../ValidListCreators/ValidWordBlock.html"
           >Create Valid Block List</a
         >
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            id="use_upload_settings"
+            class="hidden"
+            aria-label="Use Upload Settings?"
+          />
+          Use Upload Settings?
+          <info-tooltip
+            title="This will overide the settings of the words in the file with the settings defined in the upload settings section"
+          ></info-tooltip>
+        </label>
       </div>
 
       <div>
@@ -51,9 +86,15 @@
           <input
             class="whitelist_input_tb"
             placeholder="Enter word to whitelist..."
+            aria-label="Word to whitelist"
           />
         </label>
-        <button id="add_whitelist_btn_tb">Add to Whitelist</button>
+        <button id="add_whitelist_btn_tb" aria-label="Add to Whitelist">
+          Add to Whitelist
+        </button>
+              <info-tooltip
+        title="Double-Click to remove added whitelist terms"
+      ></info-tooltip>
         <div id="whitelist_display_tb"></div>
       </div>
 
@@ -66,6 +107,7 @@
               type="checkbox"
               id="block_search_cb_toolbar"
               checked="true"
+              aria-label="Set Block in Search"
             />
             Block in Search</label
           >
@@ -74,6 +116,7 @@
               type="checkbox"
               id="block_result_cb_toolbar"
               checked="true"
+              aria-label="Set Block in Results"
             />
             Block in Results</label
           >
@@ -81,8 +124,16 @@
       </div>
 
       <div>
-        <button id="clear_button_b" class="danger">Clear All</button>
-        <button id="download">Download Words</button>
+        <button
+          id="clear_button_b"
+          aria-label="Clear all blocked words"
+          class="danger"
+        >
+          Clear All
+        </button>
+        <button id="download" aria-label="Download blocked words">
+          Download Words
+        </button>
       </div>
     </section>
 
@@ -92,18 +143,27 @@
       <h2 id="info_title"></h2>
       <div class="checkboxes">
         <label
-          ><input type="checkbox" id="block_search_cb" /> Block in Search</label
+          ><input
+            type="checkbox"
+            id="block_search_cb"
+            aria-label="Block in Search"
+          />
+          Block in Search</label
         >
         <label
-          ><input type="checkbox" id="block_result_cb" /> Block in
-          Results</label
+          ><input
+            type="checkbox"
+            id="block_result_cb"
+            aria-label="Block in Results"
+          />
+          Block in Results</label
         >
       </div>
 
       <div class="whitelist">
         <strong>Personal Whitelist:</strong>
         <ul id="whitelist_display"></ul>
-        <div class="whitelist-add">
+        <div class="whitelist-add" aria-label="Add new whitelist term">
           <input
             type="text"
             id="new_whitelist_input"
@@ -114,7 +174,9 @@
       </div>
 
       <div class="actions">
-        <button id="remove_btn" class="danger">Remove Word</button>
+        <button id="remove_btn" class="danger" aria-label="Remove Word">
+          Remove Word
+        </button>
       </div>
     </section>
 

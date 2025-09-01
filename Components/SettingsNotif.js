@@ -16,7 +16,7 @@ class SettingsNotif extends HTMLElement {
     <style>
     :host {
         opacity: 0;
-        transition: opacity 1s ease;
+  transition: none;
         position: fixed;
         bottom: 20px;
         left: 50%;
@@ -26,11 +26,13 @@ class SettingsNotif extends HTMLElement {
         padding: 10px 20px;
         border-radius: 8px;
         font-size: 16px;
-        pointer-events: none; /* lets clicks pass through */
+        pointer-events: none;
         }
 
     :host(.show) {
         opacity: 1;
+          transition: opacity 1s ease;
+
         }
     </style>
           <span id="notifText"></span>

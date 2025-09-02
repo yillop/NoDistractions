@@ -48,8 +48,8 @@ This extensions requests the following permissions:
 - `storage`:  
   Used to save your block lists and settings locally in Chrome’s storage.
 
-- `host_permissions` (`<all_urls>`):  
-  Allows the extension to access and modify content on all websites, which is necessary to block or remove search results and site links on Google Search pages.
+- `host_permissions` (`*://*.google.com/search*`):  
+  Allows the extension to access and modify content only on Google Search pages, which is necessary to block or remove search results and site links.
 
 These permissions are required for the extension to block sites and words and manage your block lists
 

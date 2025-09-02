@@ -42,7 +42,7 @@ The same thing as above will happen for site domains that you block.
 
 This extensions requests the following permissions:
 
-- `declarativeNetRequest` and `declarativeNetRequestWithHostAccess`:  
+- `declarativeNetRequest`:  
   Used to block or redirect network requests to specified sites and domains directly in the browser.
 
 - `storage`:  

@@ -30,7 +30,7 @@ Blocking a word example:
 When searching for Michael Jackson normally:
 ![Alt text](READMEIMGS/MJBefore.png)
 
-When searching for Michael Jackson after setting "Block Results":
+When searching for Michael Jackson after setting "Block Results" and all of the miscellaneous blocks from the settings menu:
 ![Alt text](READMEIMGS/MJAfter.png)
 
 When searching for Michael Jackson after setting "Block Search":

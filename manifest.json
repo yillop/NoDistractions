@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NoDistractions",
+  "name": "NoDistractions - Google Search Distraction Blocker",
   "version": "1.0",
   "description": "A Chrome extension to block sites or words from appearing in search results and block site links from being accessed",
   "background": {
